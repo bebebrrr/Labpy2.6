@@ -62,7 +62,7 @@ if __name__ == '__main__':
                 )
             
             print(line)
-        elif command.startswitch('select '):
+        elif command.startswith('select '):
             today = date.today()
 
             parts = command.split(' ', maxsplit=1)
@@ -79,4 +79,10 @@ if __name__ == '__main__':
         elif command == 'help':
             print("Список команд:\n")
             print("add - добавить работника;")
-            print("list - ")
+            print("list - вывести список работников;")
+            print("select <стаж> - запросить работников со стажем;")
+            print("help - отобразить справку;")
+            print("exit - завершить работу с программой.")
+        else:
+            print(f"Неизвестная команда {command}", file=sys.stderr)
+           
